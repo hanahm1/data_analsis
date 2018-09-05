@@ -1,0 +1,93 @@
+#list treatment groups
+C_89 <- c("290", "243", "267B", "297")
+PI_89 <- c("882", "291", "889", "817")
+C_97 <- c("807", "837", "251", "294")
+PI_97 <- c("822", "846", "8133", "244")
+C_190 <- c("283", "284", "876", "855", "302", "277")
+PI_190 <- c("281B", "310", "281", "252", "8120", "309")
+C_245 <- c("272", "268", "278", "250")
+PI_245 <- c("842", "307", "308")
+WY_190_C <- c("P44", "P72", "P57", "P61", "P4102", "P56")
+WY_190_PI <- c("P71", "P32", "P21", "P12", "P37", "P47")
+WY_190_TI <- c("P492", "P15", "P67", "P4104", "P463", "P4138")
+
+#Define path 
+folder_path <- "/Users/hanahgeorges/Documents/IHC/Test_Macro/untitled_folder"
+directory1 <- dir(folder_path, pattern = "*.csv")
+filenames <- list.files(folder_path, pattern = "*.csv", full.names = TRUE)
+
+#make new directories for sorting
+#mergeDir <- dir.create("merging", showWarnings = FALSE, recursive = FALSE)
+#C89Path <- file.path(folder_path, "C89")
+C89Dir <- dir.create(C89Path<-file.path(folder_path, "C89"), showWarnings = FALSE, recursive = TRUE)
+#C89Path <- folder_path
+PI89Dir <- dir.create(PI89Path<-file.path(folder_path, "PI89"), showWarnings = FALSE, recursive = TRUE)
+#PI89Path <- folder_path/PI89
+C97Dir <- dir.create(C97Path<-file.path(folder_path, "C97"), showWarnings = FALSE, recursive = TRUE)
+#C97Path <- folder_path/C97
+PI97Dir <- dir.create(PI97Path<-file.path(folder_path, "PI97"), showWarnings = FALSE, recursive = TRUE)
+#PI97Path <- folder_path/PI97
+C190Dir <- dir.create(C190Path<-file.path(folder_path, "C190"), showWarnings = FALSE, recursive = TRUE)
+#C190Path <- folder_path/C190
+PI190Dir <- dir.create(PI190Path<-file.path(folder_path, "PI190"), showWarnings = FALSE, recursive = TRUE)
+#PI190Path <- folder_path/merging/PI190
+C245Dir <- dir.create(C245Path<-file.path(folder_path, "C245"), showWarnings = FALSE, recursive = TRUE)
+#C245Path <- folder_path/merging/C245
+PI245Dir <- dir.create(PI245Path<-file.path(folder_path, "PI245"), showWarnings = FALSE, recursive = TRUE)
+#PI245Path <- folder_path/merging/PI245
+WYCDir <- dir.create(WYCPath<-file.path(folder_path, "WYC"), showWarnings = FALSE, recursive = TRUE)
+#WYCPath <- folder_path/merging/WYC
+WYPIDir <- dir.create(WYPIPath<-file.path(folder_path, "WYPI"), showWarnings = FALSE, recursive = TRUE)
+#WYPIPath <- folder_path/merging/WYPI
+WYTIDir <- dir.create(WYTIPath<-file.path(folder_path, "WYTI"), showWarnings = FALSE, recursive = TRUE)
+#WYTIPath <- folder_path/merging/WYTI
+
+#Sort treatments into folders
+for (fileName in filenames) {
+#for (fileName in filenames) {  
+  cow_id <- unlist(strsplit(fileName, "_"))
+  ifelse(cow_id %in% C_89, file.copy(from=folder_path, to=C89Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#  if(cow_id %in% C_89) {
+#    file.copy(from=filenames, to=C89Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% PI_89, file.copy(from=folder_path, to=PI89Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#    if(cow_id %in% PI_89) {
+#    file.copy(from=filenames, to=PI89Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% C_97, file.copy(from=folder_path, to=C97Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#    if(cow_id %in% C_97) {
+#    file.copy(from=filenames, to=C97Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% PI_97, file.copy(from=folder_path, to=PI97Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#  if(cow_id %in% PI_97) {
+#    file.copy(from=filenames, to=PI97Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% C_190, file.copy(from=folder_path, to=C190Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#  if(cow_id %in% C_190) {
+#    file.copy(from=folder_path, to=C190Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% PI_190, file.copy(from=folder_path, to=PI190Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#  if(cow_id %in% PI_190) {
+#    file.copy(from=folder_path, to=PI190Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% C_245, file.copy(from=folder_path, to=C245Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#  if(cow_id %in% C_245) {
+#    file.copy(from=folder_path, to=C245Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% PI_245, file.copy(from=folder_path, to=PI245Path, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#  if(cow_id %in% PI_245) {
+#    file.copy(from=filenames, to=PI245Path,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+#  } else {}
+  ifelse(cow_id %in% WY_190_C, file.copy(from=folder_path, to=WYCPath, overwrite = TRUE, recursive = FALSE, copy.mode = TRUE), print("nope"))
+#  if(cow_id %in% WY_190_C) {
+#    file.copy(from=filenames, to=WYCPath,
+#              overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+  } else {}
